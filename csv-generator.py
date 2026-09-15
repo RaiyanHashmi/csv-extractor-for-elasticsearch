@@ -216,7 +216,7 @@ st.markdown("Extract data streams **and indices** directly to CSV")
 # Sidebar: Connection
 with st.sidebar:
     st.header("🔧 Connection")
-    host = st.text_input("Host", "10.23.85.60")
+    host = st.text_input("Host", "10.xx.xx.xx")
     port = st.number_input("Port", value=9200, min_value=1, max_value=65535)
     auth = st.selectbox("Auth", ["API Key", "Basic Auth", "None"])
     ssl = st.checkbox("SSL", False)
