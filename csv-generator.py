@@ -216,13 +216,13 @@ st.markdown("Extract data streams directly to CSV")
 # Sidebar: Connection
 with st.sidebar:
     st.header("🔧 Connection")
-    host = st.text_input("Host", "10.23.85.60")
+    host = st.text_input("Host", "10.xx.xx.xx")
     port = st.number_input("Port", value=9200, min_value=1, max_value=65535)
     auth = st.selectbox("Auth", ["API Key", "Basic Auth", "None"])
     ssl = st.checkbox("SSL", False)
 
     if auth == "API Key":
-        key = st.text_input("Key", value="LXdVMURKb0I1ZkFsTno4bkl2ZG06ZThtMUljUU9PZHhvLV93M216SFRWUQ==", type="password")
+        key = st.text_input("Key", value="xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx", type="password")
         user = pwd = None
     elif auth == "Basic Auth":
         user = st.text_input("User")
