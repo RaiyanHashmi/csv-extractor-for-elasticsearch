@@ -18,6 +18,8 @@ Recommended: **Python 3.9+**
 
 ### 1. Clone the Repository
 
+Clone the repository and navigate to the project directory.
+
 ### 2. Install Dependencies
 
 Install the required Python packages:
@@ -31,6 +33,26 @@ If the `streamlit` command is not recognized, install Streamlit using Python:
 ```bash
 python -m pip install streamlit
 ```
+
+## Configuration
+
+Before running the application, update the **Elasticsearch host** and **API key** in `csv-generator.py`.
+
+Look for the Elasticsearch connection configuration and replace the placeholder values with your Elasticsearch details.
+
+Example:
+
+```python
+ELASTICSEARCH_HOST = "https://your-elasticsearch-host:9200"
+ELASTICSEARCH_API_KEY = "YOUR_API_KEY"
+```
+
+Update:
+
+* `ELASTICSEARCH_HOST` → Your Elasticsearch server URL
+* `ELASTICSEARCH_API_KEY` → Your Elasticsearch API key
+
+> **Security:** Never commit a real Elasticsearch API key to a public GitHub repository. Use environment variables or a `.env` file for production environments.
 
 ## Run the Application
 
@@ -61,14 +83,14 @@ The application requires the following Python packages:
 
 ## Quick Start
 
-You can install everything with:
-
 ```bash
 python --version
 pip install streamlit elasticsearch pytz urllib3
 python -m pip install streamlit
 python -m streamlit run csv-generator.py
 ```
+
+Before running the application, make sure the Elasticsearch **host** and **API key** are configured correctly.
 
 ## Troubleshooting
 
@@ -106,6 +128,16 @@ Example:
 Streamlit, version 1.x.x
 ```
 
+### Elasticsearch Connection Issues
+
+If the application cannot connect to Elasticsearch, verify:
+
+1. The Elasticsearch host URL is correct.
+2. The Elasticsearch server is reachable from your machine.
+3. The API key is valid.
+4. The API key has the required Elasticsearch permissions.
+5. HTTPS/TLS configuration is correct if your Elasticsearch server uses HTTPS.
+
 ## Project Structure
 
 ```text
@@ -120,9 +152,11 @@ csv-generator/
 
 1. Install Python.
 2. Install the required dependencies.
-3. Run the Streamlit application.
-4. Open the provided localhost URL.
-5. Use the application interface to generate CSV data.
+3. Configure the Elasticsearch host.
+4. Configure the Elasticsearch API key.
+5. Run the Streamlit application.
+6. Open the provided localhost URL.
+7. Use the application interface to generate CSV data.
 
 ## Technologies
 
